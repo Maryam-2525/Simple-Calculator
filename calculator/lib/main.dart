@@ -11,11 +11,14 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: Scaffold(
-          appBar: AppBar(
-              title: const Text('Simple Calculator'),
-              backgroundColor: Colors.blue),
+      home: Scaffold(
+        appBar: AppBar(
+            title: const Text('Simple Calculator'),
+            backgroundColor: Colors.blue),
+        body: const SafeArea(
+          child: CalBtn(),
         ),
-        body: const CalBtn());
+      ),
+    );
   }
 }
