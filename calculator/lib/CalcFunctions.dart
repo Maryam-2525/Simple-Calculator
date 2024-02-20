@@ -11,12 +11,14 @@ class CalcFunc extends StatefulWidget {
 class _CalcFuncState extends State<CalcFunc> {
   TextEditingController controller = TextEditingController();
 
-  dynamic result = '0';
+  String result = '0';
+
+  var maryam;
 
   void onPressedAdd(double num1, double num2) {
     var Add = num1 + num2;
     setState(() {
-      result = Add;
+      result = Add.toString();
     });
   }
 
@@ -45,28 +47,28 @@ class _CalcFuncState extends State<CalcFunc> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(4),
-      child: ElevatedButton(onPressed: onPressedAdd, child: const Text('+')),
+      child: ElevatedButton(onPressed: () {}, child: const Text('+')),
     );
   }
 
   Widget subFunc(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(4),
-      child: ElevatedButton(onPressed: onPressedSub, child: const Text('-')),
+      child: ElevatedButton(onPressed: () {}, child: const Text('-')),
     );
   }
 
   Widget mulFunc(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(4),
-      child: ElevatedButton(onPressed: onPressedMul, child: const Text('*')),
+      child: ElevatedButton(onPressed: () {}, child: const Text('*')),
     );
   }
 
   Widget divFunc(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(4),
-      child: ElevatedButton(onPressed: onPressedDiv, child: const Text('/s')),
+      child: ElevatedButton(onPressed: () {}, child: const Text('/s')),
     );
   }
 }
