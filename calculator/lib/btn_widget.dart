@@ -1,6 +1,7 @@
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
+import 'package:calculator/CalcFunctions.dart';
 
 class CalBtn extends StatefulWidget {
   const CalBtn({
@@ -12,6 +13,7 @@ class CalBtn extends StatefulWidget {
 }
 
 class _CalBtnState extends State<CalBtn> {
+  TextEditingController controller = TextEditingController();
   String compute(value) {
     var text = '0';
 
@@ -26,6 +28,20 @@ class _CalBtnState extends State<CalBtn> {
     return Container(
       alignment: Alignment.center,
       child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+        TextField(
+          decoration: const InputDecoration(
+              border: OutlineInputBorder(), isDense: true),
+          style: const TextStyle(color: Colors.black),
+          controller: controller,
+          onChanged: (value) {
+            setState(() {
+              controller.text = value;
+            });
+          },
+        ),
+        const SizedBox(
+          height: 10,
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -59,7 +75,7 @@ class _CalBtnState extends State<CalBtn> {
             buildButton(context, "1"),
             buildButton(context, "2"),
             buildButton(context, "3"),
-            buildButton(context, "1"),
+            subFun(controller)
           ],
         ),
         Row(
@@ -68,7 +84,7 @@ class _CalBtnState extends State<CalBtn> {
             buildButton(context, "0"),
             buildButton(context, "."),
             buildButton(context, "="),
-            buildButton(context, "1"),
+            CalcFunc(),
           ],
         ),
         Row(
@@ -90,9 +106,12 @@ class _CalBtnState extends State<CalBtn> {
       padding: const EdgeInsets.all(4),
       child: ElevatedButton(
           onPressed: () {
-            print(text);
+            setState(() {
+              controller.text = text;
+            });
           },
           child: Text(text)),
     );
   }
 }
+

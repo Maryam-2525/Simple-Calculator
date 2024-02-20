@@ -1,5 +1,16 @@
 # calculator
 
+A simple calculation that make a simple arthmetic function
+
+# Steps
+
+# major function
+
+Addition()
+subtraction()
+division()
+modulus()
+
 A new Flutter project.
 
 ## Getting Started
