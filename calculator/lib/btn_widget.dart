@@ -75,7 +75,6 @@ class _CalBtnState extends State<CalBtn> {
             buildButton(context, "1"),
             buildButton(context, "2"),
             buildButton(context, "3"),
-            subFun(controller)
           ],
         ),
         Row(
@@ -114,4 +113,3 @@ class _CalBtnState extends State<CalBtn> {
     );
   }
 }
-
